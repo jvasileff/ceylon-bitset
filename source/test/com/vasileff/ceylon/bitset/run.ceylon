@@ -33,7 +33,7 @@ shared test void testBitSetOnBitSet() {
     assertEquals(BitSet{1,2,3}.andNot(BitSet{3,4}), set { 1,2 });
 }
 
-shared void testSetOnBitSet() {
+shared test void testSetOnBitSet() {
     // Set.whatever(BitSet)
     assert (set{1,2,3}.superset(BitSet{1,3}));
     assert (!set{1,2,3}.superset(BitSet{1,4}));
@@ -53,7 +53,7 @@ shared void testSetOnBitSet() {
     assertEquals(set{1,2,3}.complement(BitSet{3,4}), set { 1,2 });
 }
 
-shared void testBitSetOnSet() {
+shared test void testBitSetOnSet() {
     // BitSet.whatever(Set)
     assert (BitSet{1,2,3}.superset(set{1,3}));
     assert (!BitSet{1,2,3}.superset(set{1,4}));
@@ -74,7 +74,7 @@ shared void testBitSetOnSet() {
     assertEquals(BitSet{1,2,3}.complement(set{3,4}), set { 1,2 });
 }
 
-shared void testBitsetIterator() {
+shared test void testBitsetIterator() {
     assertEquals(BitSet {}.sequence(), []);
     assertEquals(BitSet {0}.sequence(), [0]);
     assertEquals(BitSet {1, 3}.sequence(), [1, 3]);
